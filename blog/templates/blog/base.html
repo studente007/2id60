@@ -1,11 +1,16 @@
 {% load staticfiles %}
-<html>
+<html lang="en" ng-app='ang'>
     <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+      <title>Django Girls blog</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+      <script src="{% static 'js/app.module.js' %}"></script>
+      <script src="{% static 'js/app.config.js' %}"></script>
+      <script src="{% static 'js/blog-list.module.js' %}"></script>
+      <script src="{% static 'js/blog-list.component.js' %}"></script>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
       <div class="page-header">
@@ -13,14 +18,17 @@
           <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
           {% endif %}
         <h1><a href="/">Django Girls Blog</a></h1>
- </div>
- <div class="content container">
+      </div>
+      <div class='' ng-controller="BlogListController">
+
+      </div>
+      <div class="content container">
      <div class="row">
          <div class="col-md-8">
          {% block content %}
          {% endblock %}
          </div>
      </div>
- </div>
+   </div>
     </body>
 </html>
